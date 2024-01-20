@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Transportation() {
-    <div>
+    return <div>
         <h2> Resources Page </h2>
     </div>
 }

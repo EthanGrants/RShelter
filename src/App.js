@@ -6,22 +6,25 @@ import Weather from './Weather';
 import Transportation from './Transportation';
 import Maps from './Maps';
 import Resources from './Resources';
+import Layout from './Layout';
 
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-   <Router>
-    <div className = "App">
-      <Route path = "/Home" component = {Home} />
-      <Route path = "/Weather" component = {Weather} />
-      <Route path = "/Transportation" component = {Transportation} />
-      <Route path = "/Maps" component = {Maps} />
-      <Route path = "/Resources" component = {Resources} />
-      
-    </div>
-   </Router>
+   <BrowserRouter>
+   <Routes>
+   <Route path="/" element={<Layout />}>
+          {/* slash gets there */}
+          <Route index element={<Home />} />
+          <Route path="weather" element={<Weather />} />
+          <Route path="transportation" element={<Transportation />} />
+          <Route path="maps" element={<Maps />} />
+          <Route path="resources" element={<Resources />} />
+        </Route>
+      </Routes>
+   </BrowserRouter>
   );
 }
 
