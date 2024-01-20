@@ -8,13 +8,15 @@ const buttonContainerStyle = {
 const buttonStyle = {
     padding: "10px 50px",
     margin: "2px",
-    backgroundColor: "#9a08d7",
-    color: "#fff",
+    backgroundColor: "#bde6ec",
+    color: "#000",
     textDecoration: "none",
     cursor: "pointer",
     border: "50px",
     border: "2px solid #5bd4ef", // Border color
     lineHeight: "2",
+    boxShadow: "0 4px 8px rgba(155, 8, 215, 0.5)", // Purple shadow
+    fontWeight: "bold"
   };
 
   
