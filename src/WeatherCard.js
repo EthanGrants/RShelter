@@ -8,22 +8,24 @@ const WeatherCard = ({ weatherData }) => {
   }
 
   const currentCondition = weatherData.current_condition[0];
+  // const getCity = nearestArea.areaName[0].value;
 
   // Extracting variables from the JSON response
-  const temperature = currentCondition.temp_C;
-  const windSpeed = currentCondition.windspeedKmph;
-  const precipitation = currentCondition.precipitation;
+  const temperature = currentCondition.temp_F;
+  const windSpeed = currentCondition.windspeedMiles;
+  const precipitation = currentCondition.precipMM;
+
 
   // Set thresholds for warnings (you can adjust these values)
-  const highTemperatureThreshold = 30; // Example threshold in degrees Celsius
-  const highWindSpeedThreshold = 40; // Example threshold in km/h
-  const lowTemperatureThreshold = -10; // Example threshold in degrees Celsius
+  const highTemperatureThreshold = 90; // Example threshold in degrees Celsius
+  const highWindSpeedThreshold = 20; // Example threshold in km/h
+  const lowTemperatureThreshold = 40; // Example threshold in degrees Celsius
 
   // Determine if there are warnings
   const isHighTemperatureWarning = temperature > highTemperatureThreshold;
   const isHighWindSpeedWarning = windSpeed > highWindSpeedThreshold;
   const isLowTemperatureWarning = temperature < lowTemperatureThreshold;
-  const isRainWarning = precipitation === "Rain";
+  const isRainWarning = precipitation > 0.5;
 
   // Determine if "SEEK SHELTER" warning is needed
   const shouldSeekShelter = isHighTemperatureWarning || isHighWindSpeedWarning || isLowTemperatureWarning || isRainWarning;
@@ -44,9 +46,9 @@ const WeatherCard = ({ weatherData }) => {
   return (
     <div style={cardStyle}>
       <h3>Weather Information</h3>
-      <p>Temperature: {temperature}°C</p>
-      <p>Wind Speed: {windSpeed} km/h</p>
-      <p>Precipitation: {precipitation}</p>
+      <p>Temperature: {temperature}°F</p>
+      <p>Wind Speed: {windSpeed} mph</p>
+      <p>Precipitation: {precipitation} MM</p>
       {shouldSeekShelter && <p style={{ color: "red", fontWeight: "bold" }}>SEEK SHELTER</p>}
       {isHighTemperatureWarning && <p style={{ color: "red" }}>Warning: High Temperature!</p>}
       {isHighWindSpeedWarning && <p style={{ color: "red" }}>Warning: High Wind Speed!</p>}
