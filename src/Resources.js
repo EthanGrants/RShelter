@@ -37,7 +37,7 @@ const resources = {
  const imageStyle = {
     height: "50px",
     width: "100px",
-    marginLeft: "10px",
+    marginLeft: "175px",
  }
 function Resources() {
    return (
