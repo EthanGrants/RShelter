@@ -29,7 +29,7 @@
 }
 
 body {
-  background-color: #bde6ec;
+  background-color: #bde6ec !important;
   background: #bde6ec;
   padding: "8px 8px"
 }
