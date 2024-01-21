@@ -1,14 +1,18 @@
 import React from 'react';
 
+const iframeStyle = {
+    marginTop: '50px', // Adjust the margin top as needed
+  };
+
 function Transportation() {
   return (
     <div>
-      <h2>Transportation Page</h2>
       <iframe
         title="Riverside Transit"
         src="https://www.riversidetransit.com/index.php/riding-the-bus/plan-my-trip"
         width="100%"
         height="600px"
+        style = {iframeStyle}
       />
     </div>
   );
