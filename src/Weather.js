@@ -1,7 +1,7 @@
 // Weather.js
-
 import React, { useEffect, useState } from "react";
 import WeatherCard from "./WeatherCard";
+import { homeStyle, linkStyle } from "./Home.js";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -24,10 +24,13 @@ const Weather = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Weather Page</h2>
+      <div style={homeStyle}>
+      <h2>Weather Alerts</h2>
+
+    <div style={linkStyle}>
       <WeatherCard weatherData={weatherData} />
       {/* Render other components or data as needed */}
+      </div>
     </div>
   );
 };

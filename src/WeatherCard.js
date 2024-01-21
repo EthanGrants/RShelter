@@ -1,5 +1,3 @@
-// WeatherCard.js
-
 import React from "react";
 
 const WeatherCard = ({ weatherData }) => {
@@ -19,6 +17,7 @@ const WeatherCard = ({ weatherData }) => {
 
 
   // Set thresholds for warnings (you can adjust these values)
+  // THIS IS THE DEMO AREA
   const highTemperatureThreshold = 90; // Example threshold in degrees Celsius
   const highWindSpeedThreshold = 20; // Example threshold in km/h
   const lowTemperatureThreshold = 40; // Example threshold in degrees Celsius
@@ -52,6 +51,7 @@ const WeatherCard = ({ weatherData }) => {
       <p>Wind Speed: {windSpeed} mph</p>
       <p>Precipitation: {precipitation} MM</p>
       {shouldSeekShelter && <p style={{ color: "red", fontWeight: "bold" }}>SEEK SHELTER</p>}
+      {!shouldSeekShelter && <p style={{ color: "black", fontWeight: "bold" }}>Weather is perfect!</p>}
       {isHighTemperatureWarning && <p style={{ color: "red" }}>Warning: High Temperature!</p>}
       {isHighWindSpeedWarning && <p style={{ color: "red" }}>Warning: High Wind Speed!</p>}
       {isLowTemperatureWarning && <p style={{ color: "blue" }}>Warning: Low Temperature!</p>}

@@ -2,14 +2,14 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
 
-const homeStyle = {
+export const homeStyle = {
     backgroundColor: '#bde6ec',
     width: "100%",
     color: "#fff",
     textShadow: "0 4px 8px rgba(155, 8, 215, 0.5)",
     fontSize: "30px",
     marginTop: "20px",
-    
+
 }
 
 
@@ -23,7 +23,7 @@ const linkContainerStyle = {
     margin: "auto",
   };
 
-  const linkStyle = {
+export const linkStyle = {
     padding: "10px",
   backgroundColor: "#fff",
   border: "2px solid #5bd4ef",
@@ -47,7 +47,7 @@ const linkContainerStyle = {
   const highlightedText = {
     marginTop: "10px",
   };
-  
+
 
 function Home() {
     return (
