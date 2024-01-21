@@ -6,6 +6,8 @@ const WeatherCard = ({ weatherData }) => {
   if (!weatherData || !weatherData.current_condition || weatherData.current_condition.length === 0) {
     return null; // Return null or some loading indicator if weatherData is not available yet
   }
+  const nearestArea = weatherData.nearest_area[0];
+  const cityName = nearestArea.areaName[0].value;
 
   const currentCondition = weatherData.current_condition[0];
   // const getCity = nearestArea.areaName[0].value;
@@ -45,7 +47,7 @@ const WeatherCard = ({ weatherData }) => {
 
   return (
     <div style={cardStyle}>
-      <h3>Weather Information</h3>
+      <h3>Weather Information for {cityName}</h3>
       <p>Temperature: {temperature}°F</p>
       <p>Wind Speed: {windSpeed} mph</p>
       <p>Precipitation: {precipitation} MM</p>
