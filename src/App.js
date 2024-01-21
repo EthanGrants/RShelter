@@ -7,11 +7,14 @@ import Transportation from './Transportation';
 import Maps from './Maps';
 import Resources from './Resources';
 import Layout from './Layout';
+import { ChakraProvider } from '@chakra-ui/react'
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 
   return (
+  <ChakraProvider>
    <BrowserRouter>
    <Routes>
    <Route path="/" element={<Layout />}>
@@ -24,6 +27,7 @@ function App() {
         </Route>
       </Routes>
    </BrowserRouter>
+   </ChakraProvider>
   );
   
 }
