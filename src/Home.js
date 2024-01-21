@@ -14,12 +14,27 @@ const homeStyle = {
 const linkContainerStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)", // 2 columns with equal width
-    gap: "300px", // Adjust the gap between links
+    //gap: "300px", // Adjust the gap between links
     textAlign: "center",
-    marginTop: "100px",
+    //marginTop: "100px",
     // Center
     margin: "auto",
   };
+
+  const bus = {
+    backgroundImage: "url(UCBus.jpg)",
+    padding: "10px",
+  border: "2px solid #5bd4ef",
+  boxShadow: "0 4px 8px rgba(155, 8, 215, 0.5)",
+  borderRadius: "5px", // Border radius for rounded corners
+  textDecoration: "none",
+  color: "#000", // Text color
+  fontWeight: "bold",
+  textShadow: "none",
+  display: "flex",
+  flexDirection: "column", // Display in a column
+  alignItems: "center",
+  }
 
   const linkStyle = {
     padding: "10px",
@@ -31,8 +46,16 @@ const linkContainerStyle = {
   color: "#000", // Text color
   fontWeight: "bold",
   textShadow: "none",
-  
+  display: "flex",
+  flexDirection: "column", // Display in a column
+  alignItems: "center",
   }
+
+  const imageStyle = {
+    width:"350px", // Set maximum width to 100%
+    height: "200px", // Set maximum height as needed
+    marginBottom: "10px",
+  };
   
 
 function Home() {
@@ -41,25 +64,29 @@ function Home() {
         <h2>R'Shelter</h2>
 
         <div style = {linkContainerStyle}>
-  <Link to={"./weather"} style={linkStyle}>
+
+  <Link to={"./weather"} id = "weather" style={linkStyle}>
     Weather
-    <div style={{ fontSize: "14px", color: "#555" }}>Check the safety of your area</div>
+
+    <img src="./RiversideMap.png" alt="weather" style={imageStyle}  />
+    <div style={{ fontSize: "20px", color: "#555" }}>Check the safety of your area</div>
   </Link>
 
-  <Link to={"./transportation"} style={linkStyle}>
+  <Link to={"./transportation"} id = "bus" style={bus}>
     Transportation
-    <div style={{ fontSize: "14px", color: "#555" }}>Find publc transportation for Riverside</div>
+    <div style={{ fontSize: "20px", color: "#555" }}>Find publc transportation for Riverside</div>
   </Link>
 
   <Link to={"./maps"} style={linkStyle}>
     Maps
-    <img src="./HomelessShelter.jpg" alt="Shelter" />
-    <div style={{ fontSize: "14px", color: "#555" }}>Find a local shelter near you</div>
+    <img src="./HomelessShelter.jpg" alt="Shelter" style={imageStyle}  />
+    <div style={{ fontSize: "20px", color: "#555" }}>Find a local shelter near you</div>
   </Link>
 
   <Link to={"./resources"} style={linkStyle}>
     Resources
-    <div style={{ fontSize: "14px", color: "#555" }}>Available emergency services</div>
+    <img src="./ambulance.jpg" alt="Bus" style={imageStyle}  />
+    <div style={{ fontSize: "20px", color: "#555" }}>Available emergency services</div>
   </Link>
       </div>
       </div>
