@@ -1,50 +1,32 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
-import Weathers from './components/weathers.js';
+import WeatherCard from "./WeatherCard";
 
 function Weather() {
-
-  const [lat, setLat] = useState([]);
-  const [long, setLong] = useState([]);
-  const [data, setData] = useState([]);
-  const [weatherData, setWeatherData] = useState([]);
-  const [forecast, setForecast] = useState([]);
-  const [error, setError] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        setLat(position.coords.latitude);
-        setLong(position.coords.longitude);
-      });
+      try {
+        const response = await fetch('http://wttr.in/?format=%C+%t+%w');
+        const result = await response.text();
 
-      console.log("Latitude is:", lat);
-      console.log("Longitude is:", long);
-
-      const response = await fetch(`${process.env.WEATHER_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.WEATHER_APP_API_KEY}`);
-      const result = await response.json();
-
-      setData(result);
-      console.log(result);
+        console.log("Weather Data:", result);
+        setWeatherData(result);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
     };
 
     fetchData();
-  }, [lat, long]);
+  }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
   return (
-
     <div>
-      <h2> Weather Page </h2>
-      {/* Render your weather data here */}
-      {(typeof data.main != 'undefined') ? (
-        <Weather weatherData={data}/>
-      ): (
-        <div></div>
-      )}
+      <h2>Weather Page</h2>
+      {weatherData && <WeatherCard weatherData={weatherData} />}
     </div>
-
   );
 }
-
 
 export default Weather;
