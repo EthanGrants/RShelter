@@ -6,13 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { ChakraProvider, theme } from '@chakra-ui/react'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-ReactDOM.render(
+
+root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <App />
