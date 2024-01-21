@@ -47,7 +47,7 @@ const WeatherCard = ({ weatherData }) => {
 
   return (
     <div style={cardStyle}>
-      <h3>Weather Information for {cityName}</h3>
+      <h3>Local Weather Information</h3>
       <p>Temperature: {temperature}°F</p>
       <p>Wind Speed: {windSpeed} mph</p>
       <p>Precipitation: {precipitation} MM</p>
