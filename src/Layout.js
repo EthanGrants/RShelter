@@ -19,7 +19,6 @@ const buttonStyle = {
     fontWeight: "bold"
   };
 
-  
 
 const Layout = () => {
   return (

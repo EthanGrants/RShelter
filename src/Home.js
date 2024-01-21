@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
 
@@ -7,6 +8,7 @@ const homeStyle = {
     color: "#fff",
     textShadow: "0 4px 8px rgba(155, 8, 215, 0.5)",
     fontSize: "30px",
+    marginTop: "20px",
     
 }
 
@@ -20,21 +22,6 @@ const linkContainerStyle = {
     // Center
     margin: "auto",
   };
-
-  const bus = {
-    backgroundImage: "url(UCBus.jpg)",
-    padding: "10px",
-  border: "2px solid #5bd4ef",
-  boxShadow: "0 4px 8px rgba(155, 8, 215, 0.5)",
-  borderRadius: "5px", // Border radius for rounded corners
-  textDecoration: "none",
-  color: "#000", // Text color
-  fontWeight: "bold",
-  textShadow: "none",
-  display: "flex",
-  flexDirection: "column", // Display in a column
-  alignItems: "center",
-  }
 
   const linkStyle = {
     padding: "10px",
@@ -56,6 +43,10 @@ const linkContainerStyle = {
     height: "200px", // Set maximum height as needed
     marginBottom: "10px",
   };
+
+  const highlightedText = {
+    marginTop: "10px",
+  };
   
 
 function Home() {
@@ -65,26 +56,26 @@ function Home() {
 
         <div style = {linkContainerStyle}>
 
-  <Link to={"./weather"} id = "weather" style={linkStyle}>
-    Weather
-
-    <img src="./RiversideMap.png" alt="weather" style={imageStyle}  />
-    <div style={{ fontSize: "20px", color: "#555" }}>Check the safety of your area</div>
+  <Link to={"./weather"} style={linkStyle}>
+  <div style={{marginBottom: "10px" }}>Weather</div>
+    <img src="./RiversideMap.jpg" alt="Bus" style={imageStyle}  />
+    <div style={{ fontSize: "20px", color: "#555", }}>Check the safety of your area</div>
   </Link>
 
-  <Link to={"./transportation"} id = "bus" style={bus}>
-    Transportation
+  <Link to={"./transportation"} style={linkStyle}>
+  <div style={{marginBottom: "10px" }}>Transportation</div>
+    <img src="./UCBus.jpg" alt="Bus" style={imageStyle}  />
     <div style={{ fontSize: "20px", color: "#555" }}>Find publc transportation for Riverside</div>
   </Link>
 
   <Link to={"./maps"} style={linkStyle}>
-    Maps
+  <div style={{marginBottom: "10px" }}>Maps</div>
     <img src="./HomelessShelter.jpg" alt="Shelter" style={imageStyle}  />
     <div style={{ fontSize: "20px", color: "#555" }}>Find a local shelter near you</div>
   </Link>
 
   <Link to={"./resources"} style={linkStyle}>
-    Resources
+  <div style={{marginBottom: "10px" }}>Resources</div>
     <img src="./ambulance.jpg" alt="Bus" style={imageStyle}  />
     <div style={{ fontSize: "20px", color: "#555" }}>Available emergency services</div>
   </Link>

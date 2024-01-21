@@ -1,6 +1,5 @@
 import './App.css';
 // Import Home, Weather, Transportation, Maps, Resources
-// import React, { useEffect, useState } from "react";
 import React from 'react';
 import Home from './Home';
 import Weather from './Weather';
@@ -8,10 +7,10 @@ import Transportation from './Transportation';
 import Maps from './Maps';
 import Resources from './Resources';
 import Layout from './Layout';
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+
   return (
    <BrowserRouter>
    <Routes>
@@ -26,6 +25,7 @@ function App() {
       </Routes>
    </BrowserRouter>
   );
+  
 }
 
 export default App;
