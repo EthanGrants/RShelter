@@ -72,7 +72,7 @@ import {
         position='relative'
         flexDirection='row'
         justifyContent='center'
-        alignItems='center'
+        alignItems='start'
         h='80vh'
         w='100vw'
       >
@@ -122,8 +122,8 @@ import {
             </Box>
   
             <ButtonGroup>
-              <Button colorScheme='pink' type='submit' onClick={calculateRoute}>
-                Calculate Route
+              <Button colorScheme='purple' type='submit' onClick={calculateRoute}>
+                Calculate Route 
               </Button>
               <IconButton
                 aria-label='center back'
