@@ -7,7 +7,7 @@ const homeStyle = {
     width: "100%",
     color: "#fff",
     textShadow: "0 4px 8px rgba(155, 8, 215, 0.5)",
-    fontSize: "30px",
+    fontSize: "40px",
     marginTop: "20px",
     
 }
