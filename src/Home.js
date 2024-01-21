@@ -65,7 +65,7 @@ function Home() {
   <Link to={"./transportation"} style={linkStyle}>
   <div style={{marginBottom: "10px" }}>Transportation</div>
     <img src="./UCBus.jpg" alt="Bus" style={imageStyle}  />
-    <div style={{ fontSize: "20px", color: "#555" }}>Find publc transportation for Riverside</div>
+    <div style={{ fontSize: "20px", color: "#555" }}>Find public transportation for Riverside</div>
   </Link>
 
   <Link to={"./maps"} style={linkStyle}>
