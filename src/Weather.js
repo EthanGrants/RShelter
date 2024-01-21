@@ -9,7 +9,7 @@ const Weather = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://wttr.in/?format=j1');
+        const response = await fetch('http://wttr.in/Riverside?format=j1');
         const result = await response.json();
 
         console.log("Weather Data:", result);
